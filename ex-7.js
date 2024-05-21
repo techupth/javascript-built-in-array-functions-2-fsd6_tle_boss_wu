@@ -1,5 +1,9 @@
 function isPalindrome(string) {
-  // Start coding here
+  let result;
+  console.log("reversed string:", string.split("").reverse().join(""));
+  console.log("original string:", string);
+  result = `Palindrome: ${string.split("").reverse().join("") == string}`
+  return result
 }
 
 //Example case
