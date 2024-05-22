@@ -372,6 +372,27 @@ const bills = [
     pointRate: 0.01,
   },
 ];
-
+// ให้เขียนโปรแกรมที่สามารถนับจำนวนสมาชิกทั้งหมด โดยจะไม่นับชื่อที่ซ้ำกัน โดยใช้ Built-in Array Function
+// "Unique Members Count: 12";
 // Start coding here
-const totalMembers;
+// const totalMembers = bills
+//   .filter((bill) => bill.member !== null)
+//   .reduce((acc, cur) => {
+//     acc.push(cur.member.name);
+//     return acc;
+//   }, [])
+//   .reduce((acc, cur) => {
+//     if (!acc.includes(cur)) {
+//       acc.push(cur);
+//     }
+//     return acc;
+//   }, []);
+
+const totalMembers = bills.reduce((acc, cur) => {
+  if (cur.member !== null && !acc.includes(cur.member.name)) {
+    acc.push(cur.member.name);
+  }
+  return acc;
+}, []);
+
+console.log(totalMembers.length);

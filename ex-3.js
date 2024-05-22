@@ -373,5 +373,17 @@ const bills = [
   },
 ];
 
+// ให้เขียนโปรแกรมที่สามารถแสดงผลชื่อสมาชิกจากรายการสั่งซื้อสินค้าทั้งหมด โดยใช้ Built-in Array Function
 // Start coding here
-const billMembers;
+// const billMembers = bills
+//   .filter((bill) => bill.member !== null)
+//   .map((bill) => bill.member.name);
+
+const billMembers = bills
+  .filter((bill) => bill.member !== null)
+  .reduce((acc, cur) => {
+    acc.push(cur.member.name);
+    return acc;
+  }, []);
+
+console.log(billMembers);

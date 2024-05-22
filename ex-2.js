@@ -375,4 +375,5 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+const newBills = bills.filter((bill) => bill.total !== null);
+console.log(newBills);
