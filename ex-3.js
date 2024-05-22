@@ -374,10 +374,17 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers = bills.filter((item) => {
-  return item.member !== null
-}).reduce((acc, cur) => {
-  acc.push(cur.member.name)
+// const billMembers = bills.filter((item) => {
+//   return item.member !== null
+// }).reduce((acc, cur) => {
+//   acc.push(cur.member.name)
+//   return acc
+// }, [])
+
+const billMembers = bills.reduce((acc, cur) => {
+  if (cur.member !== null) {
+    acc.push(cur.member.name)
+  }
   return acc
 }, [])
 
