@@ -370,9 +370,11 @@ const bills = [
       age: 26,
     },
     pointRate: 0.01,
-  },
-];
+  }
+ ]
 
-// Start coding here
-
-const newBills;
+ function onlyMember (bills) {
+  return bills.filter(bills => bills.member !== null);
+ }
+const memberTransaction = onlyMember(bills);
+console.log(memberTransaction)
