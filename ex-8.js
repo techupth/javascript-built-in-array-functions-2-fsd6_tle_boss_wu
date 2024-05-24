@@ -373,6 +373,11 @@ const bills = [
     },
 ];
 
-// Start coding here
 
-const totalPaidByLocation;
+
+const totalPaidByLocation = [];
+bills.forEach(bill => {                                             /*(acc    ,       cur),0*/
+    totalPaidByLocation[bill.location] = (totalPaidByLocation[bill.location] || 0) + bill.total;
+});
+
+console.log(totalPaidByLocation);p

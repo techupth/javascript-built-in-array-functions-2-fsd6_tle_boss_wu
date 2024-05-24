@@ -372,6 +372,12 @@ const bills = [
     pointRate: 0.01,
   },
 ];
+function memberName (bills) {
+  //console.log(bills)
+  return bills.filter(bill => bill.member !== null && bill.member.name).map(bill => bill.member.name);
+}
+let billMembers = [...new Set(memberName(bills))];
 
-// Start coding here
-const totalMembers;
+const totalMembers = billMembers.length;
+console.log("Unique Members Count: [" +  `${totalMembers}`+ " " + "billMembers] memberlist - " + billMembers)
+//console.log(billMembers)
